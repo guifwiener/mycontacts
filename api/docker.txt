@@ -1,0 +1,21 @@
+docker pull postgres => Download da imagem do postgres
+docker images ls => List images
+docker run --name pg -e POSTGRES_USER=root -e POSTGRES_PASSWORD=root -p 5432:5432 -d postgres
+  --name => Define nome
+  -e => Environment variable
+  -p => Ports used
+  -d => Dettached (Close cmd and still runs)
+  postgres => Image to run
+docker container ls
+ ||
+docker ps => List containers
+docker stop pg => Stop container (May use Container ID or Container name)
+docker ps -a => Show all, including stopped
+
+docker container rm pg => Delete container
+docker rmi postgres => Delete image
+
+// Using docker run without image downloaded makes docker download the image automatically
+
+docker exec -it pg bash
+psql -U root
